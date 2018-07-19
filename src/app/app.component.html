@@ -1,9 +1,11 @@
-<app-header></app-header>
+<app-header 
+(recipesActive)="toggleRecipes($event)"
+(shoppingListActive)="toggleShoppingList($event)"></app-header>
 <div class="container">
   <div class="row">
       <div class="col-md-12">
-        <app-recipes></app-recipes>
-        <app-shopping-list></app-shopping-list>
+        <app-recipes *ngIf="recipesEnabled"></app-recipes>
+        <app-shopping-list *ngIf="shoppingListEnabled"></app-shopping-list>
       </div>
   </div>
 </div>

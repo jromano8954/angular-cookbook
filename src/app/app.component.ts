@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  shoppingListEnabled = false;
+  recipesEnabled = true;
+
+  toggleRecipes(event:boolean){
+    this.recipesEnabled = event;
+  }
+  toggleShoppingList(event:boolean){
+    this.shoppingListEnabled = event;
+  }
 }
