@@ -11,7 +11,7 @@ export class HeaderComponent {
     shoppingListStatus = false;
 
     onToggleRecipes(){
-        console.log('working');
+        //console.log('working');
         this.recipeStatus = !this.recipeStatus;
         this.shoppingListStatus = false;
         this.emitStatuses();
