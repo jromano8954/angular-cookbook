@@ -1,9 +1,7 @@
 import {Recipe} from './recipe.model'
-import { EventEmitter } from '@angular/core';
 import { Ingredient } from '../shared/ingredient.model';
 
 export class RecipeService{
-    recipeSelected = new EventEmitter<Recipe>();
 
     imgPathPotato: string = 'https://www.seriouseats.com/recipes/images/2016/12/20161201-crispy-roast-potatoes-29.jpg';
     imgPathPizza: string = 'http://1.bp.blogspot.com/-oAUdcwxi4Hw/U7kCkE-W9OI/AAAAAAAAUX0/qfBZYYSfvu8/s1600/food-wallpapers-(3).jpg';
