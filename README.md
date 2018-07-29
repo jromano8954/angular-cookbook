@@ -1,6 +1,7 @@
 # MyCookbook
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+This project was created by following along an online tutorial with some changes.
 
 ## Development server
 
