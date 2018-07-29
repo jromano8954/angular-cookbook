@@ -1,7 +1,9 @@
 import {Recipe} from './recipe.model'
 import { Ingredient } from '../shared/ingredient.model';
+import { Subject } from 'rxjs';
 
 export class RecipeService{
+    recipesChanged = new Subject<Recipe[]>();
 
     imgPathPotato: string = 'https://www.seriouseats.com/recipes/images/2016/12/20161201-crispy-roast-potatoes-29.jpg';
     imgPathPizza: string = 'http://1.bp.blogspot.com/-oAUdcwxi4Hw/U7kCkE-W9OI/AAAAAAAAUX0/qfBZYYSfvu8/s1600/food-wallpapers-(3).jpg';
@@ -44,5 +46,20 @@ export class RecipeService{
 
     getRecipeEle(index:number){
         return this.recipes[index];
+    }
+
+    addRecipe(recipe: Recipe){
+        this.recipes.push(recipe);
+        this.recipesChanged.next(this.recipes.slice());
+    }
+
+    updateRecipe(index: number, newRecipe: Recipe){
+        this.recipes[index] = newRecipe;
+        this.recipesChanged.next(this.recipes.slice());
+    }
+
+    removeRecipe(index: number){
+        this.recipes.splice(index,1);
+        this.recipesChanged.next(this.recipes.slice());
     }
 }
